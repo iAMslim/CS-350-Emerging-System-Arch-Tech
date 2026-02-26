@@ -1,168 +1,133 @@
-CS 350 – Emerging Systems Architectures and Technologies
-Embedded Systems Portfolio Artifacts
-📌 Overview
+🌡️ Embedded Systems Portfolio – Smart Thermostat & Serial Control
+Project Overview
 
-This repository contains selected artifacts from CS 350 that demonstrate my development in embedded systems design, hardware–software integration, and structured state-driven architecture.
+In this course, I developed two embedded systems projects using a Raspberry Pi. The goal was to apply hardware–software integration principles and structured architecture to real-world device control problems.
 
-The projects progress chronologically from early GPIO and serial communication work to a fully integrated smart thermostat prototype. Together, they reflect both technical growth and architectural maturity across the course.
+The first project focused on serial communication and GPIO control. The second expanded into a fully integrated smart thermostat prototype using sensing, state management, display control, and communication protocols.
 
-🧩 Module Two Milestone
-Serial Light Control Server
+Together, these projects demonstrate growth from basic hardware interaction to structured embedded system design.
 
-File: SerialLightControl-Server.py
-Source: 
+Provided Code
 
-SerialLightControl-Server
+The projects included:
 
-🔎 Purpose
+Raspberry Pi hardware platform
 
-This project was completed during Module Two and represents one of my first structured embedded systems implementations.
+GPIO mappings and circuit configuration
 
-The system controls an LED on a breadboard using UART serial communication. The Raspberry Pi listens for commands over the serial interface and turns the LED on or off accordingly.
+Sensor and display wiring setup
 
-💡 Skills Demonstrated
+Base environment structure
 
-UART configuration and serial protocol communication
+These components handled the physical interface and hardware layer.
 
-Broadcom GPIO pin numbering
+Code I Implemented
+Serial Light Control (Module Two)
 
-Safe GPIO initialization and cleanup
+Configured UART serial communication
 
-Structured command handling using match-case logic
+Implemented command parsing using match-case
 
-Hardware actuation based on incoming commands
+Controlled GPIO output for LED actuation
 
-This milestone laid the foundation for understanding how embedded systems communicate across physical interfaces.
+Ensured safe GPIO cleanup and program exit
 
-🔥 Module Seven Integration / Final Project
-Smart Thermostat Prototype
+Smart Thermostat Prototype (Module Seven)
 
-File: Thermostat.py
-Source: 
+Implemented a formal state machine with off, heat, and cool states
 
-Thermostat
+Built temperature comparison logic tied to a configurable setpoint
 
-🔎 Purpose
+Configured PWM LED behavior for heating and cooling indicators
 
-This artifact represents the most advanced system built during the course.
+Developed button event handlers for state cycling and setpoint adjustment
 
-The thermostat prototype simulates the embedded control layer of a commercial smart thermostat. It integrates sensing, user input, state management, display control, and serial communication into a cohesive system.
+Integrated I2C communication for temperature sensing
 
-⚙️ System Features
+Implemented LCD display management with time and system data
 
-Reads temperature data via I2C (AHT20 sensor)
+Built a UART output routine for transmitting status updates
 
-Implements a formal state machine with off, heat, and cool states
+Added multithreading for non-blocking display updates
 
-Controls LEDs using PWM for visual state representation
+What This Project Demonstrates
 
-Handles user input through physical buttons
-
-Updates a 16x2 LCD display with real-time system data
-
-Sends comma-delimited status updates over UART every 30 seconds
-
-Uses multithreading for display management
-
-🧠 Architectural Focus
-
-Rather than relying on simple conditional branching, I structured the thermostat around a formal state machine model. This improved:
-
-Predictability
-
-Readability
-
-Maintainability
-
-Scalability
-
-This shift reflects my progression from “making hardware work” to designing embedded systems intentionally.
-
-🪞 Reflection
-🧩 Project Summary
-
-Across these modules, the problem evolved from controlling a single LED through serial input to building a fully integrated smart thermostat prototype.
-
-Before cloud analytics, dashboards, or mobile applications exist, the embedded device itself must reliably:
-
-Sense environmental data
-
-Manage operating states
-
-Respond to user input
-
-Actuate hardware
-
-Communicate status updates
-
-This prototype focuses on building that dependable embedded foundation.
-
-✅ What I Did Well
-
-Designed around a structured state machine architecture
-
-Separated hardware, logic, and display responsibilities
-
-Implemented clean GPIO and serial initialization/cleanup
-
-Improved debugging discipline for hardware-level issues
-
-Transitioned from script-based coding to modular system design
-
-📈 Areas for Improvement
-
-Expand error handling for sensor and serial failures
-
-Introduce abstraction layers for hardware scalability
-
-Implement structured logging for diagnostics
-
-Add fault tolerance for communication interruptions
-
-Future iterations could integrate Wi-Fi and cloud-based APIs to extend functionality.
-
-🛠 Tools and Technologies
-
-gpiozero and RPi.GPIO
-
-Adafruit CircuitPython libraries
-
-Python statemachine framework
-
-UART serial configuration
-
-Multithreading in embedded systems
-
-I2C sensor communication
-
-Beyond software, this project strengthened my ability to interpret hardware documentation, troubleshoot wiring issues, and reason through physical system design.
-
-🔄 Transferable Skills
-
-Event-driven programming
-
-State machine modeling
+These projects reflect core embedded systems concepts, including:
 
 Hardware–software integration
 
-Communication protocol configuration
+GPIO configuration and control
 
-Modular architecture design
+Communication protocol implementation (UART and I2C)
 
-Embedded debugging methodology
+State-driven architecture
 
-These competencies apply directly to IoT systems, robotics, automation platforms, and distributed edge computing environments.
+Event-based input handling
 
-🧱 Maintainability & Adaptability
+Multithreaded system coordination
 
-The thermostat architecture is designed for extension. By separating responsibilities into structured components, the system can be adapted to include:
+They demonstrate progression from single-device control to coordinated multi-component embedded systems.
 
-Wireless communication
+What Computer Scientists Do and Why It Matters
 
-Cloud integration
+Computer scientists design systems that connect software logic to real-world hardware. In embedded systems, this means managing sensors, outputs, and communication interfaces through structured architecture.
 
-Additional sensors
+These systems are foundational in IoT devices, automation platforms, and smart infrastructure where reliability and scalability are critical.
 
-Expanded state logic
+How I Approach Problems
 
-The design emphasizes clarity, modularity, and scalability.
+Understand hardware constraints and interfaces
+
+Define clear system states and transitions
+
+Separate hardware control from application logic
+
+Implement incrementally
+
+Test under realistic operating conditions
+
+Refine for stability and maintainability
+
+Ethical Considerations
+
+Responsible embedded system design requires attention to:
+
+Reliability and predictable behavior
+
+Safe hardware initialization and shutdown
+
+Stable automated control logic
+
+Long-term maintainability and scalability
+
+Technologies Used
+
+Python
+
+gpiozero
+
+RPi.GPIO
+
+Adafruit CircuitPython
+
+I2C protocol
+
+UART serial communication
+
+Python statemachine library
+
+Multithreading
+
+Key Skills Demonstrated
+
+Embedded systems architecture
+
+State machine implementation
+
+Serial communication configuration
+
+Hardware debugging and integration
+
+Modular system design
+
+Structured problem solving
