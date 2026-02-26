@@ -1,132 +1,111 @@
-🔧 CS 350 – Embedded Systems Portfolio
-🌡️ Smart Thermostat & Serial Control Projects
-📌 Project Overview
+# 🌡️ Smart Thermostat & Serial Control – Embedded Systems Project  
 
-In this course, I developed two embedded systems projects using a Raspberry Pi.
+## Project Overview  
 
-The first focused on serial communication and GPIO control.
-The second evolved into a fully integrated smart thermostat prototype combining sensing, state management, display control, and communication protocols.
+In this project, I developed two embedded systems applications using a Raspberry Pi. The goal was to apply hardware–software integration and structured architecture to real-world device control problems.
 
-Together, these projects demonstrate progression from basic hardware interaction to structured embedded system architecture.
+The first project implemented serial communication to control hardware output. The second evolved into a fully integrated smart thermostat prototype using sensing, state management, display control, and communication protocols.
 
-🧩 Project One – Serial Light Control
-File
+Together, these projects demonstrate progression from basic GPIO interaction to coordinated embedded system design.
 
-SerialLightControl-Server.py
+---
 
-What It Does
+## Provided Code  
 
-This project implements UART serial communication to control an LED through GPIO output. The Raspberry Pi listens for incoming commands and toggles the LED accordingly.
+The project included:
 
-What I Implemented
+- Raspberry Pi hardware platform  
+- Predefined GPIO mappings  
+- Sensor and display wiring configuration  
+- Base system framework  
 
-Configured UART serial interface
+These components handled the hardware environment and interface layer.
 
-Implemented command parsing using match-case
+---
 
-Controlled GPIO output using Broadcom numbering
+## Code I Implemented  
 
-Ensured safe GPIO shutdown and cleanup
+I focused on building and integrating the system logic. Specifically, I:
 
-What This Demonstrates
+- Configured UART serial communication for LED control  
+- Implemented command parsing using `match-case`  
+- Controlled GPIO output safely and predictably  
+- Implemented a formal state machine with `off`, `heat`, and `cool` states  
+- Built temperature comparison logic tied to a configurable setpoint  
+- Configured PWM LED behavior for heating and cooling indicators  
+- Developed button event handlers for state cycling and setpoint adjustment  
+- Integrated I2C communication for temperature sensing  
+- Implemented LCD display management with time and system data  
+- Built a UART routine to transmit comma-delimited status updates  
+- Added multithreading to manage non-blocking display updates  
 
-Serial communication setup
+---
 
-Low-level GPIO control
+## What This Project Demonstrates  
 
-Structured command handling
+This project reflects core embedded systems concepts, including:
 
-Safe hardware lifecycle management
+- Hardware–software integration  
+- State-driven architecture  
+- Communication protocol configuration (UART and I2C)  
+- Event-based input handling  
+- Multithreaded coordination  
 
-🌡️ Project Two – Smart Thermostat Prototype
-File
+More broadly, it demonstrates how structured software design can coordinate physical components into a reliable embedded device.
 
-Thermostat.py
+---
 
-What It Does
+## What Computer Scientists Do and Why It Matters  
 
-The thermostat integrates multiple hardware components into a cohesive embedded system:
+Computer scientists design systems that connect abstract logic to real-world functionality. In embedded systems, this means coordinating sensors, outputs, and communication interfaces through structured architecture.
 
-Reads temperature via I2C (AHT20 sensor)
+These systems form the foundation of IoT devices, automation platforms, and smart infrastructure where reliability and scalability are critical.
 
-Implements a formal state machine (off, heat, cool)
+---
 
-Controls LEDs using PWM
+## How I Approach Problems  
 
-Handles user input through physical buttons
+This project reflects how I approach technical challenges:
 
-Updates a 16x2 LCD display
+1. Define the system states and transitions  
+2. Separate hardware control from application logic  
+3. Implement incrementally  
+4. Test under realistic operating conditions  
+5. Refine for stability and maintainability  
 
-Sends comma-delimited status updates over UART every 30 seconds
+Rather than expecting immediate success, I focused on structured iteration and performance validation.
 
-Uses multithreading for non-blocking display updates
+---
 
-Architectural Focus
+## Ethical Considerations  
 
-Rather than relying on basic conditional logic, the system is structured around a state-driven architecture. This improves:
+Even in embedded systems development, responsible design is important. It is necessary to consider:
 
-Predictability
+- Reliability and predictable behavior  
+- Safe hardware initialization and shutdown  
+- Stability in automated decision-making  
+- Long-term maintainability and scalability  
 
-Readability
+---
 
-Maintainability
+## Technologies Used  
 
-Scalability
+- Python  
+- gpiozero  
+- RPi.GPIO  
+- Adafruit CircuitPython  
+- I2C protocol  
+- UART serial communication  
+- Python `statemachine` library  
+- Multithreading  
 
-🚀 What These Projects Demonstrate
+---
 
-Hardware–software integration
+### Key Skills Demonstrated  
 
-Communication protocol configuration (UART & I2C)
-
-State machine implementation
-
-Event-driven system design
-
-Multithreaded coordination
-
-Modular embedded architecture
-
-🧠 How I Approach Embedded Problems
-
-Define system states clearly
-
-Separate hardware control from application logic
-
-Implement incrementally
-
-Validate under realistic conditions
-
-Refine for stability and maintainability
-
-🛠 Technologies Used
-
-Python
-
-gpiozero
-
-RPi.GPIO
-
-Adafruit CircuitPython
-
-I2C protocol
-
-UART serial communication
-
-Python statemachine library
-
-Multithreading
-
-💡 Key Skills Demonstrated
-
-Embedded systems architecture
-
-State machine design
-
-Serial communication configuration
-
-Hardware debugging and integration
-
-Modular system development
-
-Structured problem solving
+- Embedded systems architecture  
+- State machine implementation  
+- Serial communication configuration  
+- Hardware debugging and integration  
+- Modular software design  
+- Structured problem solving  
