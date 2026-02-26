@@ -1,106 +1,105 @@
-🌡️ Embedded Systems Portfolio – Smart Thermostat & Serial Control
-Project Overview
+🔧 CS 350 – Embedded Systems Portfolio
+🌡️ Smart Thermostat & Serial Control Projects
+📌 Project Overview
 
-In this course, I developed two embedded systems projects using a Raspberry Pi. The goal was to apply hardware–software integration principles and structured architecture to real-world device control problems.
+In this course, I developed two embedded systems projects using a Raspberry Pi.
 
-The first project focused on serial communication and GPIO control. The second expanded into a fully integrated smart thermostat prototype using sensing, state management, display control, and communication protocols.
+The first focused on serial communication and GPIO control.
+The second evolved into a fully integrated smart thermostat prototype combining sensing, state management, display control, and communication protocols.
 
-Together, these projects demonstrate growth from basic hardware interaction to structured embedded system design.
+Together, these projects demonstrate progression from basic hardware interaction to structured embedded system architecture.
 
-Provided Code
+🧩 Project One – Serial Light Control
+File
 
-The projects included:
+SerialLightControl-Server.py
 
-Raspberry Pi hardware platform
+What It Does
 
-GPIO mappings and circuit configuration
+This project implements UART serial communication to control an LED through GPIO output. The Raspberry Pi listens for incoming commands and toggles the LED accordingly.
 
-Sensor and display wiring setup
+What I Implemented
 
-Base environment structure
-
-These components handled the physical interface and hardware layer.
-
-Code I Implemented
-Serial Light Control (Module Two)
-
-Configured UART serial communication
+Configured UART serial interface
 
 Implemented command parsing using match-case
 
-Controlled GPIO output for LED actuation
+Controlled GPIO output using Broadcom numbering
 
-Ensured safe GPIO cleanup and program exit
+Ensured safe GPIO shutdown and cleanup
 
-Smart Thermostat Prototype (Module Seven)
+What This Demonstrates
 
-Implemented a formal state machine with off, heat, and cool states
+Serial communication setup
 
-Built temperature comparison logic tied to a configurable setpoint
+Low-level GPIO control
 
-Configured PWM LED behavior for heating and cooling indicators
+Structured command handling
 
-Developed button event handlers for state cycling and setpoint adjustment
+Safe hardware lifecycle management
 
-Integrated I2C communication for temperature sensing
+🌡️ Project Two – Smart Thermostat Prototype
+File
 
-Implemented LCD display management with time and system data
+Thermostat.py
 
-Built a UART output routine for transmitting status updates
+What It Does
 
-Added multithreading for non-blocking display updates
+The thermostat integrates multiple hardware components into a cohesive embedded system:
 
-What This Project Demonstrates
+Reads temperature via I2C (AHT20 sensor)
 
-These projects reflect core embedded systems concepts, including:
+Implements a formal state machine (off, heat, cool)
+
+Controls LEDs using PWM
+
+Handles user input through physical buttons
+
+Updates a 16x2 LCD display
+
+Sends comma-delimited status updates over UART every 30 seconds
+
+Uses multithreading for non-blocking display updates
+
+Architectural Focus
+
+Rather than relying on basic conditional logic, the system is structured around a state-driven architecture. This improves:
+
+Predictability
+
+Readability
+
+Maintainability
+
+Scalability
+
+🚀 What These Projects Demonstrate
 
 Hardware–software integration
 
-GPIO configuration and control
+Communication protocol configuration (UART & I2C)
 
-Communication protocol implementation (UART and I2C)
+State machine implementation
 
-State-driven architecture
+Event-driven system design
 
-Event-based input handling
+Multithreaded coordination
 
-Multithreaded system coordination
+Modular embedded architecture
 
-They demonstrate progression from single-device control to coordinated multi-component embedded systems.
+🧠 How I Approach Embedded Problems
 
-What Computer Scientists Do and Why It Matters
-
-Computer scientists design systems that connect software logic to real-world hardware. In embedded systems, this means managing sensors, outputs, and communication interfaces through structured architecture.
-
-These systems are foundational in IoT devices, automation platforms, and smart infrastructure where reliability and scalability are critical.
-
-How I Approach Problems
-
-Understand hardware constraints and interfaces
-
-Define clear system states and transitions
+Define system states clearly
 
 Separate hardware control from application logic
 
 Implement incrementally
 
-Test under realistic operating conditions
+Validate under realistic conditions
 
 Refine for stability and maintainability
 
-Ethical Considerations
-
-Responsible embedded system design requires attention to:
-
-Reliability and predictable behavior
-
-Safe hardware initialization and shutdown
-
-Stable automated control logic
-
-Long-term maintainability and scalability
-
-Technologies Used
+🛠 Technologies Used
 
 Python
 
@@ -118,16 +117,16 @@ Python statemachine library
 
 Multithreading
 
-Key Skills Demonstrated
+💡 Key Skills Demonstrated
 
 Embedded systems architecture
 
-State machine implementation
+State machine design
 
 Serial communication configuration
 
 Hardware debugging and integration
 
-Modular system design
+Modular system development
 
 Structured problem solving
